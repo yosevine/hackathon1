@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Weekly Activities</title>
+    <link href = "myweeklyactivities.css" rel="stylesheet">
+</head>
+
+
+<body>
+    
+    <div class="app">
+        <header>
+            <button id="additem" class="additem">+</button>
+
+            <h1>MY WEEKLY ACTIVITIES</h1>
+
+        </header>
+        <div id="todobox" style="display: none">
+            <form id="todoform">
+                <label for="todo"> To do: </label><br>
+                <input id="todo" name="todo" placeholder="Write your to do list here"><br>
+                <label for="description">Description</label><br>
+                <input id="description" name="description" placeholder="Tell us more about it"><br>
+                <label for="days"> When is this for ?</label><br>
+                <input id="days" name="days" placeholder="Mon/Tue/Wed/Thu/Fri/Sa"><br>
+                <button class="submit">Add to my weekly activities</button>
+            </form>
+        </div>
+
+        <div class="lists">
+            <div class="list">Sunday
+                <div class="list-item" draggable="true">List item 1</div>
+
+            </div>
+
+            <div class="list">Monday</div>
+            <div class="list">Tuesday</div>
+            <div class="list">Wednesday</div>
+            <div class="list">Thursday</div>
+            <div class="list">Friday</div>
+            <div class="list">Saturday</div>
+
+
+        </div>
+    </div>
+
+
+
+
+<script src="myweeklyactivities.js"></script>
+</body>
+</html>
