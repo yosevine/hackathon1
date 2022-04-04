@@ -121,9 +121,50 @@ todoform.addEventListener("submit", function(event) {
 let submitForm = document.getElementById("todoform");
 
 submitForm.addEventListener("submit", function() {
+
+let newDiv = document.createElement("div");
+
+newDiv.setAttribute('draggable', 'true')
+newDiv.classList.add('list-item');
+newDiv.innerHTML = "list-item2"
+
+let day = document.getElementById("list");
+day.appendChild(newDiv);
+
+
+})
+
+/*
+
+let submitForm = document.getElementById("todoform");
+
+submitForm.addEventListener("submit", function() {
+let newNewNewDiv = document.getElementById("lists");
+let newNewDiv = document.getElementById("monday");
+let newDiv = document.createElement("list-item");
+newNewDiv.appendChild(newDiv);
+
+}) 
+
+/*
+
+let day = document.getElementById("list");
+let bigbox = document.getElementById("lists");
+day.appendChild(newDiv);
+newDiv.appendChild(list);
+
+}) 
+
+/*
+
+let submitForm = document.getElementById("todoform");
+
+submitForm.addEventListener("submit", function() {
 let newDiv = document.createElement("div");
 let day = document.getElementById("monday");
 day.appendChild(newDiv);
+newDiv.appendChild()
+
 }) 
 
 // console.log(document.getElementById("monday"));
