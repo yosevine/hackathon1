@@ -1,68 +1,68 @@
-let listitems = document.querySelectorAll(".list-item");
-let lists = document.querySelectorAll(".list");
-
 
 let draggedItem = null; // there is no item to be dragged currently
 
 // loop for all list items
 
+function addDragIntoListItem(){
+    let listitems = document.querySelectorAll(".list-item");
+    let lists = document.querySelectorAll(".list");
 for (let i = 0; i < listitems.length; i++) {
-    let item = listitems[i];
+        let item = listitems[i];
 
-    // DRAGSTART // item - to be able to be dragged
-    item.addEventListener("dragstart", function () {
-        draggedItem = item;
-        setTimeout(function () {
-            item.style.display = 'none';
-        }, 0)
-    });
-
-    // DRAGEND // 
-    item.addEventListener('dragend', function () {
-        setTimeout(function () {
-            draggedItem.style.display = 'block';
-            draggedItem = null;
-        }, 0)
-    });
-
-
-
-
-
-    for (let j = 0; j < lists.length; j++) {
-        let list = lists[j];
-
-        // DRAGOVER
-
-        list.addEventListener('dragover', function (e) {
-            e.preventDefault();
+        // DRAGSTART // item - to be able to be dragged
+        item.addEventListener("dragstart", function () {
+            draggedItem = item;
+            setTimeout(function () {
+                item.style.display = 'none';
+            }, 0)
         });
 
-        // DRAGENTER
-
-        list.addEventListener('dragenter', function (e) {
-            e.preventDefault();
+        // DRAGEND // 
+        item.addEventListener('dragend', function () {
+            setTimeout(function () {
+                draggedItem.style.display = 'block';
+                draggedItem = null;
+            }, 0)
         });
 
-        // DRAGLEAVE
 
-        list.addEventListener('dragleave', function (e) {
-            e.preventDefault();
 
-        });
 
-        // DROP
+        for (let j = 0; j < lists.length; j++) {
+            let list = lists[j];
 
-        list.addEventListener('drop', function (e) {
-            list.append(draggedItem);
-        });
+            // DRAGOVER
+
+            list.addEventListener('dragover', function (e) {
+                e.preventDefault();
+            });
+
+            // DRAGENTER
+
+            list.addEventListener('dragenter', function (e) {
+                e.preventDefault();
+            });
+
+            // DRAGLEAVE
+
+            list.addEventListener('dragleave', function (e) {
+                e.preventDefault();
+
+            });
+
+            // DROP
+
+            list.addEventListener('drop', function (e) {
+                list.append(draggedItem);
+            });
+
+
+        }
 
 
     }
 
-
 }
-
 
 // ADD ITEM button
 
@@ -116,6 +116,8 @@ todoform.addEventListener("submit", function(event) {
     */
 })
 
+
+
 // to create a new div of list item array
 
 let submitForm = document.getElementById("todoform");
@@ -131,8 +133,12 @@ newDiv.innerHTML = "list-item2"
 let day = document.getElementById("list");
 day.appendChild(newDiv);
 
+addDragIntoListItem()
+
 
 })
+
+
 
 /*
 
@@ -365,5 +371,66 @@ let createlist = document.createElement(".list-item") 
 createlist.addEventListener("submit", function() {
     let createlist = document.createElement("list-item");
 })
+
+
+
+// loop for all list items
+
+for (let i = 0; i < listitems.length; i++) {
+    let item = listitems[i];
+
+    // DRAGSTART // item - to be able to be dragged
+    item.addEventListener("dragstart", function () {
+        draggedItem = item;
+        setTimeout(function () {
+            item.style.display = 'none';
+        }, 0)
+    });
+
+    // DRAGEND // 
+    item.addEventListener('dragend', function () {
+        setTimeout(function () {
+            draggedItem.style.display = 'block';
+            draggedItem = null;
+        }, 0)
+    });
+
+
+
+
+
+    for (let j = 0; j < lists.length; j++) {
+        let list = lists[j];
+
+        // DRAGOVER
+
+        list.addEventListener('dragover', function (e) {
+            e.preventDefault();
+        });
+
+        // DRAGENTER
+
+        list.addEventListener('dragenter', function (e) {
+            e.preventDefault();
+        });
+
+        // DRAGLEAVE
+
+        list.addEventListener('dragleave', function (e) {
+            e.preventDefault();
+
+        });
+
+        // DROP
+
+        list.addEventListener('drop', function (e) {
+            list.append(draggedItem);
+        });
+
+
+    }
+
+
+}
 
 */
